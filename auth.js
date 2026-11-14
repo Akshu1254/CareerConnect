@@ -3,6 +3,8 @@ const form=document.getElementById("authForm");
 const title=document.getElementById("formTitle");
 const subtitle=document.getElementById("formSubtitle");
 const passwordGroup=document.getElementById("passwordGroup");
+const nameGroup=document.getElementById("nameGroup");
+const fullName=document.getElementById("fullName");
 const confirmGroup=document.getElementById("confirmGroup");
 const password=document.getElementById("password");
 const confirmPassword=document.getElementById("confirmPassword");
@@ -15,6 +17,7 @@ function notify(message,error=false){toast.textContent=message;toast.classList.t
 function setMode(next){
  mode=next;form.reset();password.type="password";
  passwordGroup.classList.toggle("hidden",mode==="forgot");
+ nameGroup.classList.toggle("hidden",mode!=="signup");fullName.required=mode==="signup";
  confirmGroup.classList.toggle("hidden",mode!=="signup");
  password.required=mode!=="forgot";confirmPassword.required=mode==="signup";
  if(mode==="login"){title.textContent="Login";subtitle.textContent="Welcome back. Enter your details to continue.";submitBtn.textContent="Login";switchLine.innerHTML='Don\'t have an account? <button type="button" id="signupLink">Sign up</button>';forgotLink.classList.remove("hidden");}
@@ -30,7 +33,7 @@ form.addEventListener("submit",async e=>{
  const email=document.getElementById("email").value.trim();
  const payload={email};
  if(mode!=="forgot")payload.password=password.value;
- if(mode==="signup")payload.name=email.split("@")[0];
+ if(mode==="signup")payload.name=fullName.value.trim();
  const endpoint=mode==="signup"?"/api/auth/register":mode==="forgot"?"/api/auth/forgot-password":"/api/auth/login";
  submitBtn.disabled=true;const original=submitBtn.textContent;submitBtn.textContent="Please wait...";
  try{
