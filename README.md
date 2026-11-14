@@ -3,6 +3,8 @@
 A responsive, front-end job portal concept built with HTML, CSS and vanilla JavaScript.
 
 ## Features
+- Reference-inspired dark and golden login page with responsive split layout
+- Signup and forgot-password form previews with password visibility toggle
 - Responsive desktop and mobile layout
 - Job cards with category, workplace and keyword filters
 - Save/unsave job interaction
