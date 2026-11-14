@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CareerConnect — discover jobs, connect with employers, and move your career forward.">
+  <title>CareerConnect | Find your next opportunity</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">C</span> career<span>connect</span></a>
+  <nav><a class="active" href="#jobs">Find Jobs</a><a href="#companies">Companies</a><a href="#career">Career Advice</a></nav>
+  <div class="nav-actions"><button class="btn btn-ghost" id="loginBtn">Log in</button><button class="btn btn-primary" id="postBtn">Post a Job ↗</button></div>
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+</header>
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="pulse"></span> YOUR NEXT CHAPTER STARTS HERE</div>
+    <h1>Find work that<br><em>moves you forward.</em></h1>
+    <p>Explore hand-picked opportunities from teams building what's next. Your skills deserve the right place to grow.</p>
+    <div class="search-panel">
+      <label> <span>⌕</span><input id="keyword" placeholder="Job title, skill or company"></label>
+      <label class="location"><span>⌖</span><input id="location" placeholder="City or remote"></label>
+      <button class="btn btn-primary" id="searchBtn">Search jobs</button>
+    </div>
+    <div class="popular">Popular: <button data-term="Product Designer">Product Designer</button><button data-term="Frontend">Frontend</button><button data-term="Data Analyst">Data Analyst</button></div>
+  </div>
+  <div class="hero-art">
+    <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+    <div class="art-card floating-card">
+      <div class="mini-top"><span class="mini-logo">✦</span><span class="tag">HIRING NOW</span></div>
+      <div class="art-title">Make your<br>next move count.</div>
+      <div class="art-line"></div><div class="art-line short"></div>
+      <div class="art-bottom"><div class="avatars"><b>J</b><b>M</b><b>A</b></div><small>Great teams are waiting</small></div>
+    </div>
+    <div class="stat-card"><strong>2.4k+</strong><span>Open opportunities</span></div>
+    <div class="spark">✳</div>
+  </div>
+</section>
+<section class="trust-strip" id="companies"><span>Trusted by ambitious teams</span><b>northstar</b><b class="serif">monogram</b><b>◈ vertex</b><b class="wide">cloudnine</b><b>◉ orbit</b></section>
+<section class="jobs-section" id="jobs">
+  <div class="section-heading"><div><div class="eyebrow">THE RIGHT ROLE IS OUT THERE</div><h2>Explore opportunities</h2><p>Fresh roles from teams we'd love to work with.</p></div><a href="#jobs" class="view-all" id="viewAll">View all jobs <span>↗</span></a></div>
+  <div class="filters"><button class="filter active" data-filter="All">All roles <span>06</span></button><button class="filter" data-filter="Design">Design</button><button class="filter" data-filter="Engineering">Engineering</button><button class="filter" data-filter="Marketing">Marketing</button><button class="filter" data-filter="Data">Data</button><select id="typeFilter"><option value="All">Any workplace</option><option>Remote</option><option>Hybrid</option><option>On-site</option></select></div>
+  <div class="job-grid" id="jobGrid"></div>
+  <div class="empty hidden" id="emptyState">No roles match those filters. Try a different keyword or category.</div>
+</section>
+<section class="cta" id="career"><div><div class="eyebrow light">A BETTER WAY TO GET HIRED</div><h2>Your next opportunity<br>is closer than you think.</h2><p>Create a profile and let great teams discover what you can do.</p></div><button class="btn btn-light" id="profileBtn">Create your profile ↗</button><div class="cta-decoration">✳</div></section>
+</main>
+<footer><a class="brand" href="#"><span class="brand-mark">C</span> career<span>connect</span></a><span>© 2026 CareerConnect. Built for what’s next.</span><div><a href="#jobs">Browse jobs</a><a href="#career">For candidates</a></div></footer>
+<div class="toast" id="toast"></div>
+<div class="modal-backdrop hidden" id="modal"><div class="modal"><button class="close" id="closeModal">×</button><div class="eyebrow">CAREERCONNECT</div><h3 id="modalTitle">Welcome aboard</h3><p id="modalText">Create your next opportunity with us.</p><form id="modalForm"><input required id="modalName" placeholder="Your name"><input required type="email" id="modalEmail" placeholder="Email address"><button class="btn btn-primary" type="submit" id="modalSubmit">Continue</button></form></div></div>
+<script src="script.js"></script>
+</body></html>
