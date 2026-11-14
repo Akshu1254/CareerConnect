@@ -23,7 +23,6 @@ document.getElementById("typeFilter").onchange=render;
 grid.addEventListener("click",e=>{const save=e.target.closest("[data-save]");if(save){save.classList.toggle("saved");save.textContent=save.classList.contains("saved")?"♥":"♡";toast(save.classList.contains("saved")?"Job saved to your shortlist":"Removed from saved jobs")}const apply=e.target.closest("[data-apply]");if(apply){const j=jobs.find(x=>x.id===Number(apply.dataset.apply));openModal("Apply for "+j.title,"Enter your details to register your interest. This demo stores no personal data.");}});
 const modal=document.getElementById("modal");function openModal(title,desc){document.getElementById("modalTitle").textContent=title;document.getElementById("modalText").textContent=desc;modal.classList.remove("hidden")}
 document.getElementById("closeModal").onclick=()=>modal.classList.add("hidden");modal.onclick=e=>{if(e.target===modal)modal.classList.add("hidden")};
-document.getElementById("loginBtn").onclick=()=>openModal("Welcome back","Sign-in preview — connect an authentication backend to enable real accounts.");
 document.getElementById("profileBtn").onclick=()=>openModal("Create your profile","Share your details to get started. This front-end demo does not submit data to a server.");
 document.getElementById("postBtn").onclick=()=>openModal("Post a new role","Recruiter dashboard preview — connect a backend to publish jobs.");
 document.getElementById("modalForm").onsubmit=e=>{e.preventDefault();modal.classList.add("hidden");toast("Thanks! This is a front-end demo — no data was sent.")};
