@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Log in to CareerConnect and find the job made for you.">
+  <title>Login | CareerConnect</title>
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body class="auth-page">
+  <a class="home-link" href="index.html"><span>←</span> Home</a>
+  <main class="auth-shell">
+    <section class="auth-form-side">
+      <div class="auth-form-wrap">
+        <h1 id="formTitle">Login</h1>
+        <p class="form-subtitle" id="formSubtitle">Welcome back. Enter your details to continue.</p>
+        <form id="authForm">
+          <label for="email">Email <b>*</b></label>
+          <div class="field"><span class="field-icon">＠</span><input id="email" type="email" placeholder="Your email" autocomplete="email" required></div>
+          <div id="passwordGroup">
+            <label for="password">Password <b>*</b></label>
+            <div class="field"><span class="field-icon">▣</span><input id="password" type="password" placeholder="Password" autocomplete="current-password" required><button type="button" class="eye" id="togglePassword" aria-label="Show password">◉</button></div>
+          </div>
+          <div id="confirmGroup" class="hidden">
+            <label for="confirmPassword">Confirm password <b>*</b></label>
+            <div class="field"><span class="field-icon">▣</span><input id="confirmPassword" type="password" placeholder="Confirm password"></div>
+          </div>
+          <button class="submit-btn" id="submitBtn" type="submit">Login</button>
+        </form>
+        <p class="switch-line" id="switchLine">Don't have an account? <button type="button" id="signupLink">SignUp</button></p>
+        <button type="button" class="forgot-link" id="forgotLink">Forget Password?</button>
+        <p class="demo-note">Demo interface · Authentication is not connected yet</p>
+      </div>
+    </section>
+    <aside class="auth-brand-side">
+      <div class="brand-content">
+        <div class="brand-name"><span class="anchor">⚓</span> JobHook</div>
+        <p>Find the job made for you</p>
+      </div>
+    </aside>
+  </main>
+  <div class="auth-toast" id="authToast" role="status"></div>
+  <script src="auth.js"></script>
+</body>
+</html>
